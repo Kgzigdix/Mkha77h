@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Aim Lock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0; padding: 0;
+      background: #111;
+      color: #eee;
+      font-family: sans-serif;
+      height: 100vh;
+      overflow: hidden;
+    }
+    h1 {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+    }
+    .crosshair {
+      width: 60px;
+      height: 60px;
+      border: 3px solid #e74c3c;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      pointer-events: none;
+      display: none;
+    }
+    .btn {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      outline: none;
+    }
+    .btn.active {
+      background: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+  <h1>Aim Lock</h1>
+  <div id="crosshair" class="crosshair"></div>
+  <button id="toggleButton" class="btn">Bật Aim Lock</button>
+
+  <script>
+    const btn = document.getElementById('toggleButton');
+    const cross = document.getElementById('crosshair');
+    let on = false;
+
+    btn.addEventListener('click', () => {
+      on = !on;
+      cross.style.display = on ? 'block' : 'none';
+      btn.textContent = on ? 'Tắt Aim Lock' : 'Bật Aim Lock';
+      btn.classList.toggle('active', on);
+    });
+  </script>
+</body>
+</html>
