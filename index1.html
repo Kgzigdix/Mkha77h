@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Cheat App X Minh Kha</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+background:linear-gradient(135deg,#000,#1a0000,#330000);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.box{
+width:420px;
+background:#0d0d0d;
+border:2px solid red;
+border-radius:15px;
+padding:25px;
+box-shadow:0 0 25px red;
+}
+
+.title{
+text-align:center;
+font-size:30px;
+font-weight:bold;
+color:red;
+text-shadow:0 0 10px red;
+margin-bottom:20px;
+}
+
+.note{
+background:#111;
+border:1px solid red;
+border-radius:10px;
+padding:15px;
+color:white;
+line-height:1.6;
+font-size:15px;
+margin-bottom:20px;
+}
+
+label{
+color:#ff4444;
+font-weight:bold;
+}
+
+select{
+width:100%;
+padding:10px;
+margin-top:8px;
+background:#000;
+color:white;
+border:1px solid red;
+border-radius:8px;
+}
+
+button{
+width:100%;
+margin-top:12px;
+padding:10px;
+background:red;
+color:white;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff2a2a;
+}
+
+.contact{
+text-align:center;
+color:#ff4444;
+font-weight:bold;
+margin-top:15px;
+}
+
+/* thông báo */
+
+.toast{
+position:fixed;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+background:#111;
+color:white;
+padding:12px 20px;
+border-radius:10px;
+border:1px solid red;
+box-shadow:0 0 15px red;
+display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<div class="title">
+Cheat App X Minh Kha
+</div>
+
+<div class="note">
+
+<b>Ghi chú :</b><br><br>
+
+✅️ Bạn chỉ cần vào app chọn loại Free Fire của bạn thường sử dụng , và cho phép những chức năng yêu cầu trong cài đặt app sẽ tự động kích hoạt những chức năng mà Admin Mkha đã tạo và tích hợp sẵn.<br><br>
+
+Chúc Bạn Trải Nghiệm App Vui Vẻ !
+
+</div>
+
+<label>Chọn phiên bản Free Fire</label>
+
+<select id="ffver">
+<option>com.dts.freefiremax</option>
+<option>com.dts.freefireth</option>
+</select>
+
+<button onclick="applyFF()">Áp dụng</button>
+
+<div class="contact">
+zl 0788946353 Mua hỗ trợ kéo tâm liên hệ Admin nhé 🤗
+</div>
+
+</div>
+
+<div id="toast" class="toast">
+Đã áp dụng phiên bản Free Fire của bạn 💬
+</div>
+
+<script>
+
+function applyFF(){
+
+let toast=document.getElementById("toast");
+toast.style.display="block";
+
+setTimeout(()=>{
+toast.style.display="none";
+},2500);
+
+}
+
+</script>
+
+</body>
+</html>
