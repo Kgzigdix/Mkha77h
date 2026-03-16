@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Cheat App X Minh Kha</title>
+
+<style>
+body{
+background:linear-gradient(135deg,#000,#1a0000,#330000);
+font-family:sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.box{
+width:320px;
+background:#0d0d0d;
+border:2px solid red;
+border-radius:15px;
+padding:20px;
+box-shadow:0 0 25px red;
+}
+
+.title{
+text-align:center;
+color:red;
+font-size:26px;
+font-weight:bold;
+margin-bottom:15px;
+text-shadow:0 0 10px red;
+}
+
+.note{
+background:#111;
+border:1px solid red;
+border-radius:10px;
+padding:12px;
+color:white;
+font-size:14px;
+margin-bottom:15px;
+}
+
+select{
+width:100%;
+padding:10px;
+background:black;
+color:white;
+border:1px solid red;
+border-radius:8px;
+}
+
+button{
+width:100%;
+margin-top:12px;
+padding:10px;
+background:red;
+border:none;
+color:white;
+font-weight:bold;
+border-radius:8px;
+}
+
+.toast{
+position:fixed;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+background:#111;
+color:white;
+padding:12px 20px;
+border-radius:50px;
+border:1px solid red;
+display:none;
+box-shadow:0 0 15px red;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<div class="title">
+Cheat App X Minh Kha
+</div>
+
+<div class="note">
+✅ Chọn phiên bản Free Fire bạn đang dùng.<br><br>
+App sẽ tự kích hoạt config hỗ trợ aim.
+</div>
+
+<select id="game">
+<option>com.dts.freefiremax</option>
+<option>com.dts.freefireth</option>
+</select>
+
+<button onclick="apply()">Áp dụng</button>
+
+</div>
+
+<div id="toast" class="toast">
+Đã áp dụng phiên bản Free Fire của bạn 💬
+</div>
+
+<script>
+function apply(){
+let t=document.getElementById("toast");
+t.style.display="block";
+setTimeout(()=>{t.style.display="none"},3000);
+}
+</script>
+
+</body>
+</html>
