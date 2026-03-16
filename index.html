@@ -1,0 +1,105 @@
+package com.support.minhkha;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.widget.*;
+import android.view.View;
+import android.graphics.Color;
+
+public class MainActivity extends Activity {
+
+    Switch nhetam, bamtam, damtam;
+    SeekBar sense;
+    TextView text;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        LinearLayout layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        layout.setPadding(40,40,40,40);
+        layout.setBackgroundColor(Color.BLACK);
+
+        TextView title = new TextView(this);
+        title.setText("Mkha FF Tool");
+        title.setTextColor(Color.WHITE);
+        title.setTextSize(22);
+        title.setGravity(Gravity.CENTER);
+
+        nhetam = new Switch(this);
+        nhetam.setText("Nhẹ tâm");
+
+        bamtam = new Switch(this);
+        bamtam.setText("Bám tâm");
+
+        damtam = new Switch(this);
+        damtam.setText("Đầm tâm");
+
+        text = new TextView(this);
+        text.setTextColor(Color.WHITE);
+        text.setText("Độ nhạy: 105");
+
+        sense = new SeekBar(this);
+        sense.setMax(200);
+        sense.setProgress(105);
+
+        sense.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                text.setText("Độ nhạy: " + progress);
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {}
+            public void onStopTrackingTouch(SeekBar seekBar) {}
+
+        });
+
+        Button apply = new Button(this);
+        apply.setText("Áp dụng");
+
+        Button cancel = new Button(this);
+        cancel.setText("Hủy");
+
+        apply.setOnClickListener(v -> {
+
+            boolean n = nhetam.isChecked();
+            boolean b = bamtam.isChecked();
+            boolean d = damtam.isChecked();
+            int s = sense.getProgress();
+
+            Toast.makeText(this,"Đã áp dụng",Toast.LENGTH_SHORT).show();
+
+        });
+
+        cancel.setOnClickListener(v -> {
+
+            nhetam.setChecked(false);
+            bamtam.setChecked(false);
+            damtam.setChecked(false);
+            sense.setProgress(105);
+
+            Toast.makeText(this,"Đã hủy",Toast.LENGTH_SHORT).show();
+
+        });
+
+        TextView bottom = new TextView(this);
+        bottom.setText("Đồ Chơi Tử Chiến By Mkha");
+        bottom.setTextColor(Color.WHITE);
+        bottom.setGravity(Gravity.CENTER);
+
+        layout.addView(title);
+        layout.addView(nhetam);
+        layout.addView(bamtam);
+        layout.addView(damtam);
+        layout.addView(text);
+        layout.addView(sense);
+        layout.addView(apply);
+        layout.addView(cancel);
+        layout.addView(bottom);
+
+        setContentView(layout);
+
+    }
+}
